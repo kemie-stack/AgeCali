@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="description" content="Age calculator 6that shows age, your next birthday, your zodiac sign,zodiac color, zodiac traits, etc ">
+        <meta name="keywords" content="Age Claculator,HTML, CSS, JavaScript">
+        <meta name="author" content="Adeyemi Eniola Oluwakemi">
+        <title>Unique Age Calculator</title>
+
+        <!---- =============== LINKS ================ -->
+        <!-- ===== site icon ===== -->
+        <link rel="shortcut icon" href="assets/images/icon.png" type="image/png"/>
+
+        <!-- ===== CSS files ===== -->
+        <link rel="stylesheet" href="style.css"/>
+
+    </head>
+
+
+    <body>
+        <!-- confetti canvas -->
+  <canvas id="confetti"></canvas>
+
+  <div class="app">
+    <header>
+      <img class="logo" src="assets/images/logo.svg" alt="">
+      <h1>Modern Age Calculator <span></span></h1>
+      <div class="muted">(Includes zodiac, generation & life stage)</div>
+    </header>
+
+    <div class="card">
+      <form id="ageForm" class="grid" onsubmit="return false;">
+        <div>
+          <label for="day">Day</label>
+          <input id="day" type="number" min="1" max="31" maxlength="2" placeholder="DD" inputmode="numeric" />
+        </div>
+        <div>
+          <label for="month">Month</label>
+          <input id="month" type="number" min="1" max="12" maxlength="2" placeholder="MM" inputmode="numeric" />
+        </div>
+        <div>
+          <label for="year">Year</label>
+          <input id="year" type="number" min="1900" max="" maxlength="4" placeholder="YYYY" inputmode="numeric" />
+        </div>
+
+        <div style="grid-column:1/-1" class="actions">
+          <div style="display:flex;gap:8px;align-items:center">
+            <button class="primary" id="calcBtn" type="button">Calculate Age</button>
+            <button class="ghost" id="clearBtn" type="button">Clear</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div id="outputArea" class="card" style="display:none;">
+      <div id="birthdayCard" class="birthday pop-in" style="display:none;">
+        <div style="font-size:1.05rem;font-weight:800">🎉 <span class="star">★</span> Happy Birthday! <span class="star">★</span> 🎉</div>
+        <div class="muted">Wishing you a wonderful year ahead</div>
+      </div>
+
+      <div class="results" id="resultsGrid" style="margin-top:8px;">
+        <!-- dynamic rows here -->
+      </div>
+    </div>
+
+    <!-- sliding modal -->
+    <div id="modal" class="modal" role="alert" aria-live="assertive">
+      <div class="modal-card">
+        <div class="title" id="modalTitle">Oops</div>
+        <div class="desc" id="modalMsg">Something went wrong</div>
+      </div>
+    </div>
+
+    <footer style="text-align:center;margin-top:6px;color:var(--muted);font-size:0.82rem">
+      Built with ❤️ by kemiestack👩🏾‍💻
+    </footer>
+  </div>
+
+    <script src="script.js"></script>
+    </body>
+
+</html>
